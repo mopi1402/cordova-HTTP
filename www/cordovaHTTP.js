@@ -196,6 +196,6 @@ if (typeof angular !== "undefined") {
         };
         return cordovaHTTP;
     });
-} else {
+} //else {
     window.cordovaHTTP = http;
-}
+//}
