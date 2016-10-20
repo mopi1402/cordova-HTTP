@@ -64,6 +64,10 @@ var http = {
         headers = mergeHeaders(this.headers, headers);
         return exec(success, failure, "CordovaHttpPlugin", "get", [url, params, headers]);
     },
+    patch: function(url, params, headers, success, failure) {
+        headers = mergeHeaders(this.headers, headers);
+        return exec(success, failure, "CordovaHttpPlugin", "patch", [url, params, headers]);
+    },
     head: function(url, params, headers, success, failure) {
         headers = mergeHeaders(this.headers, headers);
         return exec(success, failure, "CordovaHttpPlugin", "head", [url, params, headers]);
@@ -170,6 +174,9 @@ if (typeof angular !== "undefined") {
             },
             put: function(url, params, headers) {
                                 return makePromise(http.put, [url, params, headers], true);
+            },
+            patch: function(url, params, headers) {
+                                return makePromise(http.patch, [url, params, headers], true);
             },
             postJson: function(url, params, headers) {
                                 return makePromise(http.postJson, [url, params, headers], true);

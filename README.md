@@ -1,7 +1,7 @@
-cordovaHTTP With PostJSON, PUT and DELETE methods.
+cordovaHTTP With PostJSON, PUT, DELETE, PATCH, and HEAD methods.
 ==================
 
-Cordova / Phonegap plugin for communicating with HTTP servers.  Supports iOS and Android. This version of the plugin has two types of POST, one which send Json payloads. It also has PUT and DELETE methods.
+Cordova / Phonegap plugin for communicating with HTTP servers.  Supports iOS and Android. This version of the plugin has two types of POST, one which send Json payloads. It also has PUT, DELETE, PATCH and HEAD methods.
 
 ## Advantages over Javascript requests
 
@@ -128,7 +128,7 @@ Most apis will return JSON meaning you'll want to parse the data like in the exa
 ### postJson<a name="postJson"></a>
 Execute a POST request.  Takes a URL, parameters, and headers. See the [post](#post) documentation for details on what is returned on success and failure.
 
-    cordovaHttp.postJson(endpoint, data , header,success,failure, function (response) {
+    cordovaHttp.postJson(endpoint, data, header, success, failure, function (response) {
     }, function (err) {
     });
     
@@ -158,16 +158,30 @@ Execute a GET request.  Takes a URL, parameters, and headers.  See the [post](#p
 ### put
 Execute a PUT request.  Takes a URL, data, and headers.  See the [post](#post) documentation for details on what is returned on success and failure.
 
-    cordovaHttp.put(endpoint, data , header,success,failure, function (response) {
+    cordovaHttp.put(endpoint, data, header, success, failure, function (response) {
     }, function (err) {
     });
 
 ### delete
-Execute a GET request.  Takes a URL, data, and headers.  See the [post](#post) documentation for details on what is returned on success and failure.
+Execute a DELETE request.  Takes a URL, data, and headers.  See the [post](#post) documentation for details on what is returned on success and failure.
 
-    cordovaHttp.postJson(endpoint, data , header,success,failure, function (response) {
+    cordovaHttp.delete(endpoint, data, header, success, failure, function (response) {
     }, function (err) {
     });
+    
+### patch
+Execute a PATCH request.  Takes a URL, data, and headers.  See the [post](#post) documentation for details on what is returned on success and failure.
+
+    cordovaHttp.patch(endpoint, data, header, success, failure, function (response) {
+    }, function (err) {
+    });
+
+### head
+Execute a HEAD request.  Takes a URL, data, and headers.  See the [post](#post) documentation for details on what is returned on success and failure.
+
+cordovaHttp.head(endpoint, data, header, success, failure, function (response) {
+}, function (err) {
+});
     
 ### uploadFile
 Uploads a file saved on the device.  Takes a URL, parameters, headers, filePath, and the name of the parameter to pass the file along as.  See the [post](#post) documentation for details on what is returned on success and failure.

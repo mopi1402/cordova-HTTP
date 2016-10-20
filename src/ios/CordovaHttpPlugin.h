@@ -14,4 +14,6 @@
 - (void)downloadFile:(CDVInvokedUrlCommand*)command;
 - (void)put:(CDVInvokedUrlCommand*)command;
 - (void)delete:(CDVInvokedUrlCommand*)command;
+- (void)patch:(CDVInvokedUrlCommand*)command;
+- (void)head:(CDVInvokedUrlCommand*)command;
 @end
